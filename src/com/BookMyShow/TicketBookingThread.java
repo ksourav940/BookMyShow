@@ -1,3 +1,4 @@
+package com.BookMyShow;
 public class TicketBookingThread extends Thread {
     private Show show;
     private RegisterUser user;

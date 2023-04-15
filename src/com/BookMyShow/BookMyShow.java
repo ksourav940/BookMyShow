@@ -1,3 +1,4 @@
+package com.BookMyShow;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -15,7 +16,7 @@ public class BookMyShow {
                 if (show != null) {
                     if (movieMap.containsKey(show.getMovie().getName())) {
                         movieMap.get(show.getMovie().getName()).add(show);
-                    } else {
+                    } else { 
                         ArrayList<Show> movieShowList = new ArrayList<>();
                         movieShowList.add(show);
                         movieMap.put(show.getMovie().getName(), movieShowList);
@@ -42,13 +43,13 @@ public class BookMyShow {
         /* --------Data generation code ----START ----------------- */
 
         // Creating Guest User --> Piyush
-        GuestUser piyush = new GuestUser("Piyush");
+        GuestUser piyush = new GuestUser("piyush");
 
         // Creating Registered User --> Ayush
-        RegisterUser ayush = new RegisterUser("Ayush");
+        RegisterUser ayush = new RegisterUser("ayush");
 
         // Creating Registered User --> Saurabh
-        RegisterUser saurabh = new RegisterUser("Saurabh");
+       RegisterUser saurabh = new RegisterUser("sourav");
 
         // Creating Movie object --> Iron Man
         Movie ironMan = new Movie("Iron Man", Language.ENGLISH,Genre.ACTION);
@@ -99,8 +100,12 @@ public class BookMyShow {
             } catch (ParseException e) {
                     e.printStackTrace();
         }
+        
+       
 
         /* --------Data generation code ---- END ----------------- */
+        
+        
 
         // Now We have two theaters with their shows, lets add these theaters to our Book My Show app
         ArrayList<Theater> theaterArrayList= new ArrayList<>();
@@ -119,6 +124,8 @@ public class BookMyShow {
         */
         // Now suppose AYUSH and SAURABH both wants to book 10 tickets each for first show
         // Then Book My show will create two Ticket Booking threads for their requests
+        
+       
 
         Show bookingShow = searchedShow.get(0);
 
@@ -178,6 +185,7 @@ public class BookMyShow {
 
         System.out.println(ayushNewTicket);
         System.out.println(saurabhNewTicket);
+        
 
         /* Running this program several times, we will notice that 
         if t3 enters the bookTicket function first, 
